@@ -82,11 +82,11 @@
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
-			<string>SELECT * FROM employees WHERE first_name IN ('Irena', 'Vidya', 'Maya');
-SELECT * FROM employees WHERE last_name LIKE 'E%';
-SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31';
+			<string>SELECT * FROM employees WHERE gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya');
+SELECT * FROM employees WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
+SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31' AND birth_date LIKE '%12-25%';
 SELECT * FROM employees WHERE birth_date LIKE '%12-25%';
-SELECT * FROM employees WHERE last_name LIKE '%q%';</string>
+SELECT * FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';</string>
 			<key>table</key>
 			<string>employees</string>
 			<key>view</key>
@@ -103,26 +103,26 @@ SELECT * FROM employees WHERE last_name LIKE '%q%';</string>
 	<array/>
 	<key>queryHistory</key>
 	<array>
-		<string>SELECT * FROM employees WHERE last_name LIKE '%q%'</string>
-		<string>SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'</string>
-		<string>SELECT * FROM employees WHERE hire_date BETWEEN 1990-01-01 AND 1999-12-31</string>
-		<string>SELECT * FROM employees WHERE birth_date LIKE '%12-25%'</string>
-		<string>SELECT * FROM employees WHERE birth_date = 'YYYY-12-25'</string>
-		<string>SELECT * FROM employees WHERE birth_date = '12-25'</string>
-		<string>SELECT * FROM employees WHERE hire_date BETWEEN 1990 AND 2000</string>
-		<string>SELECT * FROM employees WHERE hire_date &gt; 1990</string>
-		<string>SELECT * FROM employees WHERE hire_date &lt; 1990</string>
-		<string>SELECT * FROM employees WHERE hire_date IN 1990</string>
-		<string>SELECT * FROM employees WHERE hire_date &lt; 1990-01-01</string>
-		<string>SELECT * FROM employees WHERE hire_date &gt; 1990-01-01</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'</string>
+		<string>SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31' AND birth_date LIKE '%12-25%'</string>
+		<string>SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31' AND birth_date = '%12-25%'</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%' OR last_name LIKE '%E'</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E'</string>
+		<string>SELECT * FROM employees WHERE last_name = 'E%' AND last_name = '%E'</string>
+		<string>SELECT * FROM employees WHERE last_name = 'E%' AND ('%E')</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%' AND ('%E')</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%' AND '%E'</string>
 		<string>SELECT * FROM employees WHERE last_name LIKE 'E%'</string>
-		<string>SELECT * FROM employees WHERE first_name IN ('Irena', 'Vidya', 'Maya')</string>
-		<string>SELECT emp_no, title FROM titles WHERE to_date IS NULL</string>
-		<string>SELECT emp_no, title FROM titles WHERE to_date IS NOT NULL</string>
-		<string>SELECT emp_no, first_name, last_name FROM employees WHERE emp_no &lt;= 10026</string>
-		<string>SELECT emp_no, first_name, last_name FROM employees WHERE emp_no &lt; 10026</string>
-		<string>SELECT emp_no, first_name, last_name FROM employees WHERE last_name = 'Baek'</string>
-		<string>SELECT emp_no, first_name, last_name FROM employees WHERE last_name IN ('Herber', 'Dredge', 'Lipner', 'Baek')</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%E'</string>
+		<string>SELECT * FROM employees WHERE last_name = 'E%E'</string>
+		<string>SELECT * FROM employees WHERE last_name = 'E%'AND  last_name = '%E'</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%'AND '%E'</string>
+		<string>SELECT * FROM employees WHERE last_name LIKE 'E%'AND LIKE '%E'</string>
+		<string>SELECT * FROM employees WHERE gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')</string>
+		<string>SELECT * FROM employees WHERE gender = 'M' AND first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya'</string>
+		<string>SELECT * FROM employees WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya' AND gender = 'm'</string>
+		<string>SELECT * FROM employees WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya' AND gender = 'M'</string>
+		<string>SELECT * FROM employees WHERE first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya' AND gender IS 'M'</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
