@@ -81,6 +81,7 @@
 			<string>SELECT DISTINCT title FROM titles GROUP BY title ASC;
 SELECT DISTINCT last_name, first_name FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' GROUP BY last_name ASC, first_name ASC;
 SELECT DISTINCT last_name FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';
+
 </string>
 			<key>table</key>
 			<string>employees</string>
@@ -98,6 +99,13 @@ SELECT DISTINCT last_name FROM employees WHERE last_name LIKE '%q%' AND last_nam
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31' AND birth_date LIKE '%12-25%'</string>
+		<string>SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31' AND birth_date LIKE '%12-25%' LIMIT 5</string>
+		<string>SELECT DISTINCT last_name FROM employees GROUP BY last_name DESC LIMIT 10</string>
+		<string>SELECT DISTINCT last_name FROM employees LIMIT '10' GROUP BY last_name DESC</string>
+		<string>SELECT DISTINCT last_name FROM employees LIMIT 10 GROUP BY last_name DESC</string>
+		<string>SELECT DISTINCT last_name FROM employees GROUP BY last_name DESC</string>
+		<string>SELECT DISTINCT title FROM titles GROUP BY title ASC</string>
 		<string>SELECT DISTINCT last_name FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'</string>
 		<string>SELECT DISTINCT last_name, first_name FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' GROUP BY last_name ASC, first_name ASC</string>
 		<string>SELECT DISTINCT last_name, first_name FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' GROUP BY last_name ASC</string>
@@ -105,19 +113,12 @@ SELECT DISTINCT last_name FROM employees WHERE last_name LIKE '%q%' AND last_nam
 		<string>SELECT DISTINCT last_name FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' GROUP BY last_name ASC</string>
 		<string>SELECT DISTINCT FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E' GROUP BY last_name ASC</string>
 		<string>SELECT DISTINCT FROM employees WHERE last_name LIKE 'E%' OR last_name LIKE '%E' GROUP BY emp_no ASC</string>
-		<string>SELECT DISTINCT title FROM titles GROUP BY title ASC</string>
 		<string>SELECT DISTINCT title FROM titles</string>
 		<string>SELECT DISTINCT titles FROM employees</string>
 		<string>SELECT * FROM employees WHERE gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') ORDER BY first_name ASC</string>
 		<string>SELECT * FROM employees WHERE first_name = 'Irena', 'Vidya', 'Maya' AND gender = 'M' ORDER BY first_name ASC</string>
 		<string>SELECT * FROM employees ORDER BY first_name = 'Irena', 'Vidya', 'Maya' AND gender = 'M' ASC</string>
 		<string>SELECT first_name, last_name FROM employees ORDER BY first_name = 'Irena', 'Vidya', 'Maya' AND gender = 'M' ASC</string>
-		<string>SELECT first_name, last_name FROM employees ORDER BY gender = 'M' AND first_name = 'Irena', 'Vidya', 'Maya' ASC</string>
-		<string>gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')</string>
-		<string>SELECT first_name, last_name FROM employees ORDER BY ASC</string>
-		<string>SELECT first_name, last_name FROM employees ORDER BY gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') ASC</string>
-		<string>SELECT first_name FROM employees ORDER BY gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') ASC</string>
-		<string>SELECT * FROM employees ORDER BY gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') ASC</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
